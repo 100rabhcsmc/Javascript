@@ -115,7 +115,7 @@ Hoisting is the default behavior of moving all the declaration at the top of the
 
 > Akshay Saini
 
-Hoisting in a javascript is a process in which all the variable,function and class define are declared before excecution of the code.
+Hoisting in a javascript is a process in which all the variable,function and class defination are declared BEFORE excecution of the code.
 
 variable initialized to undefined when they are declared.
 function defined as it is.
@@ -124,3 +124,40 @@ they are declared in _memory location phase_ in the memory component of executio
 
 undefined means variable has been declared but value is not assigned.
 Non-defined means variable not declared.
+
+variable can be declared after in has been used othe word.
+variable can be used before It has been declared.
+
+var is hoisted
+let and const does not allow hositing.
+
+**Example :**
+
+```
+var x = 9;
+function getName(){
+    console.log("Hello Saurabh");
+}
+console.log(x) // 9
+console.log(getName()) //Hello Saurabh
+```
+
+```
+console.log(x) // undefined
+console.log(getName()) // Hello Saurabh
+var x = 9;
+function getName(){
+    console.log("Hello Saurabh");
+}
+
+```
+
+```
+getName(); // Uncaught TypeError: getName is not a function
+console.log(getName);
+var getName = function () {
+    console.log("Namaste JavaScript");
+}
+//code won't execute as the first line itself throws an TypeError
+
+```
