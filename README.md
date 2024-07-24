@@ -149,7 +149,6 @@ var x = 9;
 function getName(){
     console.log("Hello Saurabh");
 }
-
 ```
 
 ```
@@ -161,3 +160,13 @@ var getName = function () {
 //code won't execute as the first line itself throws an TypeError
 
 ```
+
+### 3. Closures
+
+A closures is a function that has access to its outer function scope even after thr function has returned
+or
+A closure is combination of function bundled together with reference to its surronding state(the kexical enviroment)
+or
+closure are the function that have access to the variable that are present in there scope chain.
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/closures.png)
