@@ -288,6 +288,8 @@ map returns a new array with the transformed elements, leaving the original arra
 If you modify the elements of the array within the callback function, the original array is mutated.
 map does not mutate the original array. It creates a new array based on the return values of the callback function.
 
+**forEach**
+
 ```js
 const array = [1, 2, 3, 4, 5];
 
@@ -295,8 +297,11 @@ array.forEach(function (element, index, array) {
   console.log(element * 2); // Prints 2, 4, 6, 8, 10
 });
 
-console.log(array); // Original array remains unchanged: [1, 2, 3, 4, 5]
+console.log(array);
+// Original array remains unchanged: [1, 2, 3, 4, 5]
 ```
+
+**Map**
 
 ```js
 const array = [1, 2, 3, 4, 5];
@@ -306,5 +311,22 @@ const doubled = array.map(function (element, index, array) {
 });
 
 console.log(doubled); // New array: [2, 4, 6, 8, 10]
-console.log(array); // Original array remains unchanged: [1, 2, 3, 4, 5]
+console.log(array);
+// Original array remains unchanged: [1, 2, 3, 4, 5]
 ```
+
+### 9. What is Promises in JS?
+
+A promises is an object represting the eventual completion or failure of an asynchronous operation.
+or
+A container for a future value.
+
+A promises has three state
+1.Pending
+2.Fulfilled
+3.Rejcted
+
+A promises start in a pending state, that means the process is not complate of the operation is successfull, the process ends in a fulfilled state and if an error occure the process ends in a Rejected State.
+
+for Example
+when you request data from the server by using a promises.It will be in a pending state when the data arrives success fully, it will be in a fulfilled state of an error occure, then it will in a rejected state.
