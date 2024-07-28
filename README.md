@@ -168,6 +168,11 @@ A closure is combination of function bundled together with reference to its surr
 or
 closure are the function that have access to the variable that are present in there scope chain.
 
+**Best ans**
+A function along with reference to its outer enviroment together forms a closures
+or
+A closure is a combination of a function and lexical scope bundle together.
+
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/closures.png)
 
 ### 4. Call back Function
@@ -189,4 +194,24 @@ greet("Alice", sayGoodbye);
 // Output:
 // Hello Alice
 // Goodbye!
+```
+
+### 5. Hihger order function
+
+Higher order function is a function that takes another function as an argument or returns a function as a result.
+
+```js
+function X() {
+  console.log("Hello Saurabh");
+}
+
+function Y(x) {
+  x();
+}
+
+Y(X);
+
+//Hello Saurabh
+// x is a callback function
+// y is higher order function
 ```
