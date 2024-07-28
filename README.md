@@ -215,3 +215,96 @@ Y(X);
 // x is a callback function
 // y is higher order function
 ```
+
+### 6.What is the difference between == and ===?
+
+Both are comparison operators.
+
+The difference between both the operators is that
+**“==”** is used to compare values whereas,
+**“ === “** is used to compare both values and types.
+
+```js
+var x = 2;
+var y = "2";
+(x == y)(
+  // Returns true since the value of both x and y is the same
+  x === y
+); // Returns false since the typeof x is "number" and typeof y is "string"
+```
+
+### 7.Map,filter and reduce
+
+**Map**
+Map is specially used to transform the array.
+
+```js
+const arr = [5, 3, 2, 1, 4, 8];
+
+const double = arr.map((x) => x * 2);
+
+//[10,6,4,2,8,16]
+```
+
+so bacially map function is mapping each and every value and transforming its based on given condition
+
+**Filter**
+filter function is basically used to filter the value inside array.
+
+the arr.filter() method is used to create a new array from a given array consiting of only those element from the given array which statify the condition.
+
+```js
+const arr = [5, 1, 2, 3, 4];
+
+const even = arr.filter((x) => x % 2 == 0);
+//[2,4]
+```
+
+**Reduce**
+It is a function which take all the value of array and gives a single output of it.
+
+It reduce the array to give a single output.
+
+```js
+const arr = [1, 2, 3, 4, 5];
+const sum = arr.reduce((x, y) => x + y, 0);
+//10
+
+function findSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+console.log(findSum(arr)); //17
+```
+
+### 8. What is the difference between map and forEach?
+
+forEach does not return a new array. It returns undefined.
+map returns a new array with the transformed elements, leaving the original array unchanged.
+
+If you modify the elements of the array within the callback function, the original array is mutated.
+map does not mutate the original array. It creates a new array based on the return values of the callback function.
+
+```js
+const array = [1, 2, 3, 4, 5];
+
+array.forEach(function (element, index, array) {
+  console.log(element * 2); // Prints 2, 4, 6, 8, 10
+});
+
+console.log(array); // Original array remains unchanged: [1, 2, 3, 4, 5]
+```
+
+```js
+const array = [1, 2, 3, 4, 5];
+
+const doubled = array.map(function (element, index, array) {
+  return element * 2;
+});
+
+console.log(doubled); // New array: [2, 4, 6, 8, 10]
+console.log(array); // Original array remains unchanged: [1, 2, 3, 4, 5]
+```
